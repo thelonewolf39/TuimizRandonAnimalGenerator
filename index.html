@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random Number Generator</title>
+  <title>Random Animal Generator</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,7 +13,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background-color: #f4f4f9;
+      background-color: #ead6f1;
     }
     .container {
       width: 90%;
@@ -21,50 +21,59 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
+      text-align: center;
+    }
+    .title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
     }
     .button-container {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: center;
-      padding: 10px;
-      background-color: #ffffff;
+      gap: 10px;
+      padding: 5px 10px;
+      background-color: #fff;
       border: 1px solid #ddd;
       border-radius: 5px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     button {
-      flex: 1;
-      padding: 10px;
-      font-size: 16px;
+      width: 100px;
+      padding: 5px;
+      font-size: 14px;
       cursor: pointer;
       border: none;
       border-radius: 5px;
-      background-color: #007bff;
-      color: #ffffff;
+      background-color: #ffc107;
+      color: #000;
     }
     button:hover {
-      background-color: #0056b3;
+      background-color: #e0a800;
     }
     .number {
-      margin-left: 10px;
-      font-size: 16px;
+      flex-grow: 1;
+      text-align: left;
+      font-size: 14px;
       font-weight: bold;
-      color: #333;
+      color: #555;
+      white-space: nowrap;
+    }
+    .number:empty::after {
+      content: '\00a0'; /* Add blank space to keep the layout intact */
     }
     @media (max-width: 768px) {
-      .button-container {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .number {
-        margin: 5px 0 0 0;
-        text-align: center;
+      button {
+        width: 80px;
+        font-size: 12px;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="title">Random Animal Generator</div>
     <div class="button-container">
       <button onclick="generateNumber(0)">Base</button>
       <span class="number" id="num0"></span>
