@@ -11,7 +11,7 @@
       padding: 0;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       min-height: 100vh;
       background-color: #ead6f1;
     }
@@ -22,11 +22,17 @@
       flex-direction: column;
       gap: 10px;
       text-align: center;
+      margin-top: 10px; /* Reduce space at the top */
     }
     .title {
       font-size: 1.5rem;
       font-weight: bold;
-      margin-bottom: 20px;
+      margin-bottom: 5px; /* Less margin between title and buttons */
+    }
+    .subtitle {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 15px; /* Add subtle space between subtitle and buttons */
     }
     .button-container {
       display: flex;
@@ -46,11 +52,11 @@
       cursor: pointer;
       border: none;
       border-radius: 5px;
-      background-color: #ffc107;
+      background-color: #ffeea6;
       color: #000;
     }
     button:hover {
-      background-color: #e0a800;
+      background-color: #eadb99;
     }
     .number {
       flex-grow: 1;
@@ -74,6 +80,7 @@
 <body>
   <div class="container">
     <div class="title">Random Animal Generator</div>
+    <div class="subtitle">~ by Tuimiz ~</div>
     <div class="button-container">
       <button onclick="generateNumber(0)">Base</button>
       <span class="number" id="num0"></span>
