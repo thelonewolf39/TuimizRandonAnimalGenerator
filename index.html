@@ -223,7 +223,7 @@
     }
 
     function generateExtra(index) {
-      const randomExtra = extras[Math.floor(Math.random() * animals.length)];
+      const randomExtra = extras[Math.floor(Math.random() * extras.length)];
       document.getElementById(`num${index}`).textContent = randomExtra;
     }
   </script>
