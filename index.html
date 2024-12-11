@@ -222,40 +222,42 @@
       document.getElementById(`num${index}`).textContent = randomAnimal;
     }
 
-        function generateAnimalWithAnimation(index) {
-      const button = document.querySelector(`button[onclick='generateAnimalWithAnimation(${index})']`);
-      const element = document.getElementById(`num${index}`);
-      button.disabled = true;
-      let count = 0;
-      const interval = setInterval(() => {
-        const randomAnimal = animals[Math.floor(Math.random() * animals.length)];
-        element.textContent = randomAnimal;
-        count++;
-        if (count > 20) {
-          clearInterval(interval);
-          const finalAnimal = animals[Math.floor(Math.random() * animals.length)];
-          element.textContent = finalAnimal;
-          button.disabled = false;
-        }
-      }, 20);
-
-    function generateExtraWithAnimation(index) {
-      const button = document.querySelector(`button[onclick='generateExtraWithAnimation(${index})']`);
-      const element = document.getElementById(`num${index}`);
-      let count = 0;
-      const interval = setInterval(() => {
-        const randomExtra = extras[Math.floor(Math.random() * extras.length)];
-        button.disabled = true;
-        element.textContent = randomExtra;
-        count++;
-        if (count > 20) {
-          clearInterval(interval);
-          const finalExtra = extras[Math.floor(Math.random() * extras.length)];
-          element.textContent = finalExtra;
-          button.disabled = false;
-        }
-      }, 20);
+function generateAnimalWithAnimation(index) {
+  const button = document.querySelector(`button[onclick='generateAnimalWithAnimation(${index})']`);
+  const element = document.getElementById(`num${index}`);
+  button.disabled = true;
+  let count = 0;
+  const interval = setInterval(() => {
+    const randomAnimal = animals[Math.floor(Math.random() * animals.length)];
+    element.textContent = randomAnimal;
+    count++;
+    if (count > 20) {
+      clearInterval(interval);
+      const finalAnimal = animals[Math.floor(Math.random() * animals.length)];
+      element.textContent = finalAnimal;
+      button.disabled = false;
     }
+  }, 100);
+}
+
+function generateExtraWithAnimation(index) {
+  const button = document.querySelector(`button[onclick='generateExtraWithAnimation(${index})']`);
+  const element = document.getElementById(`num${index}`);
+  button.disabled = true;
+  let count = 0;
+  const interval = setInterval(() => {
+    const randomExtra = extras[Math.floor(Math.random() * extras.length)];
+    element.textContent = randomExtra;
+    count++;
+    if (count > 20) {
+      clearInterval(interval);
+      const finalExtra = extras[Math.floor(Math.random() * extras.length)];
+      element.textContent = finalExtra;
+      button.disabled = false;
+    }
+  }, 100);
+}
+
   </script>
 </body>
 </html>
