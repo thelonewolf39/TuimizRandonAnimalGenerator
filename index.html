@@ -223,16 +223,19 @@
     }
 
     function generateExtraWithAnimation(index) {
+      const button = document.querySelector(`button[onclick='generateAnimalWithAnimation(${index})']`);
       const element = document.getElementById(`num${index}`);
       let count = 0;
       const interval = setInterval(() => {
         const randomExtra = extras[Math.floor(Math.random() * extras.length)];
+        button.disabled = true;
         element.textContent = randomExtra;
         count++;
         if (count > 20) {
           clearInterval(interval);
           const finalExtra = extras[Math.floor(Math.random() * extras.length)];
           element.textContent = finalExtra;
+          button.disabled = false;
         }
       }, 20);
     }
