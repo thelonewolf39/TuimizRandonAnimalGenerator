@@ -122,7 +122,7 @@
       <span class="number" id="num9"></span>
     </div>
     <div class="button-container">
-      <button onclick="generateExtra(10)">Extra</button>
+      <button onclick="generateExtraWithAnimation(10)">Extra</button>
       <span class="number" id="num10"></span>
     </div>
   </div>
@@ -222,9 +222,19 @@
       document.getElementById(`num${index}`).textContent = randomAnimal;
     }
 
-    function generateExtra(index) {
-      const randomExtra = extras[Math.floor(Math.random() * extras.length)];
-      document.getElementById(`num${index}`).textContent = randomExtra;
+    function generateExtraWithAnimation(index) {
+      const element = document.getElementById(`num${index}`);
+      let count = 0;
+      const interval = setInterval(() => {
+        const randomExtra = extras[Math.floor(Math.random() * extras.length)];
+        element.textContent = randomExtra;
+        count++;
+        if (count > 20) {
+          clearInterval(interval);
+          const finalExtra = extras[Math.floor(Math.random() * extras.length)];
+          element.textContent = finalExtra;
+        }
+      }, 100);
     }
   </script>
 </body>
