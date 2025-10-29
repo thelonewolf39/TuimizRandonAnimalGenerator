@@ -131,7 +131,7 @@
     ];
 
     function showArachnophobiaWarning(animal) {
-      document.getElementById("warningOverlay").style.display = "flex";
+        alert("WARNING: Arachnophobia generated");
       console.warn("⚠️ Arachnophobia Warning Triggered for:", animal);
     }
 
